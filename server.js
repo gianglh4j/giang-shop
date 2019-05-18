@@ -7,6 +7,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 var cors = require('cors');
+const mongoose = require("mongoose");
+
+const passport = require("passport");
+const users = require("./server/routes/api/users");
 
 var app = express();
 
@@ -18,9 +22,32 @@ app.use(express.static(path.join(__dirname, 'build'))); // use for deploy produc
 
 app.use(cors());
 
+
 var route = require('./server/routes');
 
 app.use(route);
+
+
+// DB Config
+const db = require("./server/config/keys").mongoURI;
+// Connect to MongoDB
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("MongoDB successfully connected"))
+  .catch(err => console.log(err));
+
+
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./server/config/passport")(passport);
+// Routes
+app.use("/api/users", users);
+
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
