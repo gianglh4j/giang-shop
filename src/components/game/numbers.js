@@ -1,0 +1,73 @@
+export const numbers =[{
+  "id": "4b8ed46e-2d25-43f1-8942-e67dc7e8bab6",
+  "numberValue": 1,
+  "isChoose": false
+}, {
+  "id": "b9cd4433-266f-4ef0-baa2-6b2c1d5b4168",
+  "numberValue": 2,
+  "isChoose": false
+}, {
+  "id": "b782a672-a269-4ac9-a6f6-5160efc7f029",
+  "numberValue": 3,
+  "isChoose": false
+}, {
+  "id": "c0d23e4b-cf7c-4956-b2e1-237921048485",
+  "numberValue": 4,
+  "isChoose": false
+}, {
+  "id": "4bb406de-c1ce-4625-a8d1-bf88df450667",
+  "numberValue": 5,
+  "isChoose": false
+}, {
+  "id": "4f0ee07d-807a-4ce5-9845-4d8e90325db2",
+  "numberValue": 6,
+  "isChoose": false
+}, {
+  "id": "053b9c60-33b5-47aa-ae92-f6ac3cbc7dbf",
+  "numberValue": 7,
+  "isChoose": false
+}, {
+  "id": "037e527e-873d-437d-89ac-62bd679735ed",
+  "numberValue": 8,
+  "isChoose": false
+}, {
+  "id": "ed4e4c64-e579-4b48-b0bc-346b8e12878e",
+  "numberValue": 9,
+  "isChoose": false
+}, {
+  "id": "bf18753e-7796-4423-9fbe-a1eaff02cc2f",
+  "numberValue": 10,
+  "isChoose": false
+}, {
+  "id": "e08b212c-dbbd-44b5-a0b0-5f5da509dbf5",
+  "numberValue": 11,
+  "isChoose": false
+}, {
+  "id": "d13c5f0f-878d-4488-ae8b-da9745141a6c",
+  "numberValue": 12,
+  "isChoose": false
+}, {
+  "id": "2aceca67-29ec-4c40-816b-cf734b2ec99d",
+  "numberValue": 13,
+  "isChoose": false
+}, {
+  "id": "f035192b-f224-40f9-b20f-20211bf9cc70",
+  "numberValue": 14,
+  "isChoose": false
+}, {
+  "id": "8e8d779a-cd60-4c8a-82df-636bc6c5144b",
+  "numberValue": 15,
+  "isChoose": false
+}, {
+  "id": "52d4582c-e2ab-4f67-abd5-ec240d649564",
+  "numberValue": 16,
+  "isChoose": false
+}, {
+  "id": "b73e2bc4-64dd-4177-84d5-d35467c93a73",
+  "numberValue": 17,
+  "isChoose": false
+}, {
+  "id": "df109ee9-4310-41d8-8b51-a65212cf8d41",
+  "numberValue": 18,
+  "isChoose": false
+}];

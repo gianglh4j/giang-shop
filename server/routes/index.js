@@ -4,7 +4,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.send( { title: 'Express' });
+ res.json( { user: "req.user" });
+ 
 });
 
 module.exports = router;

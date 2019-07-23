@@ -8,10 +8,10 @@ var bodyParser = require('body-parser');
 var http = require('http');
 var cors = require('cors');
 const mongoose = require("mongoose");
-
+const session = require('express-session');
 const passport = require("passport");
 const users = require("./server/routes/api/users");
-
+const checkResult = require("./server/routes/api/result");
 var app = express();
 
 app.use(logger('dev'));
@@ -19,13 +19,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'build'))); // use for deploy production with build/
-
+const MongoStore = require('connect-mongo')(session);
 app.use(cors());
 
 
-var route = require('./server/routes');
 
-app.use(route);
 
 
 // DB Config
@@ -40,12 +38,45 @@ mongoose
   .catch(err => console.log(err));
 
 
+    // Enable cookieParser for app
+    app.use(cookieParser());
+
+    // Enable session for app
+    app.use(
+      session({
+        secret: 'ASDSAE',
+        resave: false,
+        saveUninitialized: false,
+        store: new MongoStore({ mongooseConnection: mongoose.connection }),
+        cookie: { maxAge: 1000*60*60*24 },
+      }),
+    );
+
+
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
 require("./server/config/passport")(passport);
+
+
+
+
+var route = require('./server/routes');
+
+app.use(route);
 // Routes
 app.use("/api/users", users);
+app.use("/api/result",checkResult);
+app.post('/profile',
+    function(req, res) { // phai set ở request : headers.Authorization = token truoc no moi xac nhan dc user. (vi du su dung postman thi phai set headers.Authorization = token thi ms post dc)
+        res.send(req.user);
+    }
+);
+app.post('/giang',function(req,res){
+  res.send("hellooo")
+})
+
+
 
 
 
